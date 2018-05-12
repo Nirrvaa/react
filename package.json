@@ -1,0 +1,37 @@
+{
+  "name": "React_Redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel src/index.html -p 3000",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nirrvaa/react.git"
+  },
+  "keywords": [],
+  "author": "Nirrvaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nirrvaa/react/issues"
+  },
+  "homepage": "https://github.com/Nirrvaa/react#readme",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-redux": "^5.0.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.4.1",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^22.4.3",
+    "parcel": "^1.8.1",
+    "postcss-modules": "^1.1.0",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2"
+  }
+}
