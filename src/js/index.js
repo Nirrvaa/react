@@ -9,8 +9,8 @@ import 'reset-css';
 import '../assets/styles/index.scss';
 
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
 );

@@ -3,21 +3,21 @@ import FilterLink from '../../containers/filter-link';
 import VisibilityFilters from '../../../assets/json/visibility-filters';
 
 const Footer = () => (
-    <p>
+	<p>
         Show:
-    {' '}
-        <FilterLink filter={VisibilityFilters.SHOW_ALL}>
+		{' '}
+		<FilterLink filter={VisibilityFilters.SHOW_ALL}>
             All
-    </FilterLink>
-        {', '}
-        <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
+		</FilterLink>
+		{', '}
+		<FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
             Active
-    </FilterLink>
-        {', '}
-        <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
+		</FilterLink>
+		{', '}
+		<FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
             Completed
-    </FilterLink>
-    </p>
+		</FilterLink>
+	</p>
 );
 
 export default Footer;
