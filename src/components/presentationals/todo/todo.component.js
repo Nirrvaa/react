@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Todo = ({ onClick, status, text }) => (
+const Todo = ({ onClick, status, title }) => (
 	<article className={`todo todo_${status}`} onClick={onClick} >
 		<p className='todo__content'>
-			{text}
+			{title}
 		</p>
-		<ul>
-			<li></li>
-		</ul>	
 	</article>
 );
 
 Todo.propTypes = {
 	onClick: PropTypes.func.isRequired,
-	completed: PropTypes.bool.isRequired,
-	text: PropTypes.string.isRequired
+	title: PropTypes.string.isRequired
 };
 
 export default Todo;

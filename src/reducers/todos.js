@@ -7,7 +7,11 @@ export default function (state = [], action) {
 			case ADD_TODO:
 				draft.push({
 					id: action.id,
-					text: action.text,
+					title: action.data.title,
+					deadline: action.data.deadline,
+					year: action.data.year,
+					month: action.data.month,
+					date: action.data.date,
 					status: {
 						failed: false,
 						completed: false,

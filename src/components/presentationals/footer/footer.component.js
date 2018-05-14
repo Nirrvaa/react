@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterLink from '../../containers/filter-link';
+import FilterCategory from '../../containers/filter-category';
 import VisibilityFilters from '../../../assets/json/visibility-filters';
 
 const Footer = () => (
@@ -9,25 +9,24 @@ const Footer = () => (
 		</h2>
 		<ul>
 			<li>
-				<FilterLink filter={VisibilityFilters.SHOW_ALL}>
+				<FilterCategory filter={VisibilityFilters.SHOW_ALL}>
 					All
-				</FilterLink>
-
+				</FilterCategory>
 			</li>
 			<li>
-				<FilterLink filter={VisibilityFilters.SHOW_PENDING}>
+				<FilterCategory filter={VisibilityFilters.SHOW_PENDING}>
 					Pending
-				</FilterLink>
+				</FilterCategory>
 			</li>
 			<li>
-				<FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
+				<FilterCategory filter={VisibilityFilters.SHOW_ACTIVE}>
 					Active
-				</FilterLink>
+				</FilterCategory>
 			</li>
 			<li>
-				<FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
+				<FilterCategory filter={VisibilityFilters.SHOW_COMPLETED}>
 					Completed
-				</FilterLink>
+				</FilterCategory>
 			</li>
 		</ul>
 	</footer>

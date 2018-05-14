@@ -1,7 +1,6 @@
 import { ADD_TODO } from '../assets/json/actions.json';
+import uniqid from 'uniqid';
 
-let id = 0;
-
-export default function (text) {
-	return { type: ADD_TODO, text, id: id++ };
+export default function (data) {
+	return { type: ADD_TODO, data, id: uniqid() };
 }
