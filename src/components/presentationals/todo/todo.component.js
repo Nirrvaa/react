@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Todo = ({ onClick, completed, text }) => (
-	<li
-		onClick={onClick}
-		style={{
-			textDecoration: completed ? 'line-through' : 'none'
-		}}
-	>
-		{text}
-	</li>
+const Todo = ({ onClick, status, text }) => (
+	<article className={`todo todo_${status}`} onClick={onClick} >
+		<p className='todo__content'>
+			{text}
+		</p>
+		<ul>
+			<li></li>
+		</ul>	
+	</article>
 );
 
 Todo.propTypes = {

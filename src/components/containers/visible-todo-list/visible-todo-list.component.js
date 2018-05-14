@@ -8,13 +8,17 @@ import { toggleTodo } from '../../../actions';
 
 const getVisibleTodos = (todos, filter) => {
 	switch (filter) {
-	case VisibilityFilters.SHOW_COMPLETED:
-		return todos.filter(t => t.completed);
-	case VisibilityFilters.SHOW_ACTIVE:
-		return todos.filter(t => !t.completed);
-	case VisibilityFilters.SHOW_ALL:
-	default:
-		return todos;
+		case VisibilityFilters.SHOW_FAILED:
+			return todos.filter(todo => todo.status.failed);
+		case VisibilityFilters.SHOW_COMPLETED:
+			return todos.filter(todo => todo.status.completed);
+		case VisibilityFilters.SHOW_ACTIVE:
+			return todos.filter(todo => todo.status.active);
+		case VisibilityFilters.SHOW_PENDING:
+			return todos.filter(todo => todo.status.pending);
+		case VisibilityFilters.SHOW_ALL:
+		default:
+			return todos;
 	}
 };
 
@@ -24,17 +28,8 @@ const mapStateToProps = state => {
 	};
 };
 
-const mapDispatchToProps = dispatch => {
-	return {
-		onTodoClick: id => {
-			dispatch(toggleTodo(id));
-		}
-	};
-};
-
 const VisibleTodoList = connect(
-	mapStateToProps,
-	mapDispatchToProps
+	mapStateToProps
 )(TodoList);
 
 export default VisibleTodoList;

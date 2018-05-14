@@ -2,15 +2,16 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config = {
-    entry: './src/js/index.js',
+    context: path.resolve(__dirname, "src"),
+    entry: './js/index.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
+        contentBase: path.join(__dirname, 'dist'),
         compress: true,
-        port: 3000
+        port: 4200
     },
     module: {
         rules: [
@@ -37,8 +38,8 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: './index.html',
-            template: './src/index.html'
+            filename: 'index.html',
+            template: 'index.html'
         })
     ]
 };
