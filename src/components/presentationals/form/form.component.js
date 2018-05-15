@@ -40,15 +40,13 @@ class Form extends Component {
     }
 
     handleSubmit() {
-        if (!this.state.deadline) {
-            this.props.addTodo({
-                title: this.state.title,
-                deadline: this.state.deadline,
-                year: this.state.year,
-                month: this.state.year,
-                date: this.state.date
-            });
-        }
+        this.props.addTodo({
+            title: this.state.title,
+            deadline: this.state.deadline,
+            year: this.state.year,
+            month: this.state.year,
+            date: this.state.date
+        });
     }
 
     onSubmit(event) {
