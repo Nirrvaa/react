@@ -12,23 +12,23 @@ const TodoList = ({ todos }) => (
 	</ul>
 );
 
-// TodoList.propTypes = {
-// 	todos: PropTypes.arrayOf(
-// 		PropTypes.shape({
-// 			id: PropTypes.string.isRequired,
-// 			title: PropTypes.string.isRequired,
-// 			deadline: PropTypes.bool.isRequired,
-// 			year: PropTypes.numb.isRequired,
-// 			month: PropTypes.numb.isRequired,
-// 			date: PropTypes.numb.isRequired,
-// 			status: PropTypes.shape({
-// 				active: PropTypes.bool.isRequired,
-// 				completed: PropTypes.bool.isRequired,
-// 				failed: PropTypes.bool.isRequired,
-// 				pending: PropTypes.bool.isRequired
-// 			}).isRequired
-// 		}).isRequired
-// 	).isRequired
-// };
+TodoList.propTypes = {
+	todos: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.string.isRequired,
+			title: PropTypes.string.isRequired,
+			deadline: PropTypes.bool.isRequired,
+			year: PropTypes.number.isRequired,
+			month: PropTypes.number.isRequired,
+			date: PropTypes.number.isRequired,
+			status: PropTypes.shape({
+				active: PropTypes.bool.isRequired,
+				completed: PropTypes.bool.isRequired,
+				failed: PropTypes.bool.isRequired,
+				pending: PropTypes.bool.isRequired
+			}).isRequired
+		}).isRequired
+	).isRequired
+};
 
 export default TodoList;

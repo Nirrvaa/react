@@ -3,31 +3,21 @@ import Header from '../header';
 import Footer from '../footer';
 import AddTodo from '../../containers/add-todo';
 import VisibleTodoList from '../../containers/visible-todo-list';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
-class App extends Component {
-	constructor(props) {
-		super(props);
 
-		this.state = {
-			showListPage: true
-		};
+const App = () => (
 
-		this.changePage = this.changePage.bind(this);
-	}
+	<div className="app">
+		<Header />
+		<Switch>
+			<Route path="/todo_list" component={VisibleTodoList} />
+			<Route path="/todo_list" component={Footer} />
+			<Route path="/add_todo" component={AddTodo} />
+			<Redirect from='/' to='/todo_list' />
+		</Switch>
 
-	changePage() {
-		this.setState({ showListPage: !this.state.showListPage });
-	}
-
-	render() {
-		return (
-			<div className="app">
-				<Header changePage={this.changePage} showListPage={this.state.showListPage} />
-				{this.state.showListPage ? <VisibleTodoList /> : <AddTodo /> }
-				{this.state.showListPage ? <Footer /> : '' }
-			</div>
-		);
-	}
-}
+	</div>
+);
 
 export default App;
