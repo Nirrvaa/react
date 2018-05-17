@@ -1,12 +1,12 @@
 {
-    "any": "/**",
-    "base": "/",
-    "todo_list": "todo_list",
-    "add_todo": "add_todo",
-    "with_deadline": "with_deadline",
-    "show_pending": "pending",
-    "show_active": "active",
-    "show_completed": "completed",
-    "show_failed": "failed",
-    "show_all": "all"
+    "ANY": "/*",
+    "BASE": "/",
+    "TODO_LIST": "TODO_LIST",
+    "ADD_TODO": "ADD_TODO",
+    "WITH_DEADLINE": "WITH_DEADLINE",
+    "SHOW_ALL": "SHOW_ALL",
+    "SHOW_COMPLETED": "SHOW_COMPLETED",
+    "SHOW_ACTIVE": "SHOW_ACTIVE",
+    "SHOW_PENDING": "SHOW_PENDING",
+    "SHOW_FAILED": "SHOW_FAILED"
 }

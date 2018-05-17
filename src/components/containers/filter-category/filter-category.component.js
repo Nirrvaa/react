@@ -28,17 +28,8 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-	return {
-		onClick: () => {
-			dispatch(setVisibilityFilter(ownProps.filter));
-		}
-	};
-};
-
 const FilterCategory = connect(
-	mapStateToProps,
-	mapDispatchToProps
+	mapStateToProps
 )(Category);
 
 export default FilterCategory;

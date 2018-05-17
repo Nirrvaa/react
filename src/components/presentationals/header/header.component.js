@@ -1,33 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { TODO_LIST, SHOW_ALL, ADD_TODO } from '../../../assets/json/routes';
 
-
-class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showTodoList: true
-        };
-
-        this.togglePage = this.togglePage.bind(this);
-    }
-
-    togglePage() {
-        this.setState({ showTodoList: !this.state.showTodoList });
-    }
-
-    render() {
-        return (
-            <header className='header'>
-                <h1 className='header__caption'>N</h1>
-                <Link to={`/${this.state.showTodoList ? 'add_todo' : 'todo_list' }`}>
-                    <button className='header__button' onClick={this.togglePage}>
-                        {this.state.showTodoList ? 'add todo' : 'back to list'}
-                    </button>
-                </Link>
-            </header>
-        );
-    }
-}
+const Header = ({ match: { params } }) => {
+    const isTodoListOpened = () => ~params[0].indexOf(TODO_LIST);
+    return (
+        <header className='header'>
+            <h1 className='header__caption'>N</h1>
+            <Link to={`/${isTodoListOpened() ? ADD_TODO : TODO_LIST}`}>
+                <button className='header__button'>
+                    {isTodoListOpened() ? 'add todo' : 'back to list'}
+                </button>
+            </Link>
+        </header>
+    );
+};
 
 export default Header;

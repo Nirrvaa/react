@@ -28,6 +28,12 @@ const Footer = () => (
 					Completed
 				</FilterCategory>
 			</li>
+			
+			<li>
+				<FilterCategory filter={VisibilityFilters.SHOW_FAILED}>
+					Failed
+				</FilterCategory>
+			</li>
 		</ul>
 	</footer>
 );
