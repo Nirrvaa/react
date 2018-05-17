@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Category = ({ active, count, children, onClick }) => {
 	return (
 		<div>
-			<button className={` button ${ active ? 'button_active' : '' }`}>
+			<button className={` button ${ active ? 'button_active' : '' }`} onClick={onClick}>
 				{ children }
 			</button>
 			<span>

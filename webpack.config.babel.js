@@ -5,7 +5,7 @@ const config = {
     context: path.resolve(__dirname, "src"),
     entry: './js/index.js',
     output: {
-        filename: 'bundle.js',
+        filename: './bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {

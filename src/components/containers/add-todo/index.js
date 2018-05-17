@@ -1,2 +1,2 @@
-import addTodo from './add-todo.component';
-export default addTodo;
+import AddTodo from './add-todo.component';
+export default AddTodo;

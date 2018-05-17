@@ -1,0 +1,12 @@
+{
+    "any": "/**",
+    "base": "/",
+    "todo_list": "todo_list",
+    "add_todo": "add_todo",
+    "with_deadline": "with_deadline",
+    "show_pending": "pending",
+    "show_active": "active",
+    "show_completed": "completed",
+    "show_failed": "failed",
+    "show_all": "all"
+}

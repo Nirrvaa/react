@@ -10,7 +10,6 @@ const Todo = ({ onClick, status, title }) => (
 );
 
 Todo.propTypes = {
-	onClick: PropTypes.func.isRequired,
 	title: PropTypes.string.isRequired
 };
 
