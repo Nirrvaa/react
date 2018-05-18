@@ -1,14 +1,15 @@
 {
-  "name": "React_Redux",
+  "name": "nova",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "lint": "./node_modules/.bin/eslint ./src/",
-    "lint:fix": "./node_modules/.bin/eslint ./src/ --fix",
-    "start": "webpack-dev-server --hot --mode development",
-    "build": "webpack --mode production"
+    "test": "cross-env jest",
+    "lint": "cross-env ./node_modules/.bin/eslint ./src/",
+    "lint:fix": "cross-env ./node_modules/.bin/eslint ./src/ --fix",
+    "start": "cross-env webpack-dev-server --hot --mode development",
+    "build": "cross-env webpack --mode production",
+    "prepush": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
     "eslint": "^4.19.1",
