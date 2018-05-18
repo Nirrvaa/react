@@ -5,28 +5,28 @@ import { TODO_LIST } from '../../../assets/json/routes';
 
 const Category = ({ active, count, children, filter, onClick }) => {
 
-	const className = `button ${active ? 'button_active' : ''}`;
+    const className = `button ${active ? 'button_active' : ''}`;
 
-	return (
-		<div>
-			<Link to={`/${TODO_LIST}/${filter}`}>
-				<button className={className}>
-					{children}
-				</button>
-			</Link>
-			<span>
-				{count}
-			</span>
+    return (
+        <div>
+            <Link to={`/${TODO_LIST}/${filter}`}>
+                <button className={className}>
+                    {children}
+                </button>
+            </Link>
+            <span>
+                {count}
+            </span>
 			
-		</div >
-	);
+        </div >
+    );
 };
 
 Category.propTypes = {
-	active: PropTypes.bool.isRequired,
-	count: PropTypes.number.isRequired,
-	filter: PropTypes.string.isRequired,
-	children: PropTypes.node.isRequired
+    active: PropTypes.bool.isRequired,
+    count: PropTypes.number.isRequired,
+    filter: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
 };
 
 export default Category;

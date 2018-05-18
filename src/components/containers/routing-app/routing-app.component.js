@@ -4,16 +4,16 @@ import { setVisibilityFilter } from '../../../actions';
 import App from '../../presentationals/app';
 
 const mapDispatchToProps = dispatch => {
-	return {
-		setVisibilityFilter(nextProps) {
-			dispatch(setVisibilityFilter(nextProps.match.params.filter));
-		}
-	};
+    return {
+        setVisibilityFilter(nextProps) {
+            dispatch(setVisibilityFilter(nextProps.match.params.filter));
+        }
+    };
 };
 
 const RoutingApp = connect(
-	null,
-	mapDispatchToProps
+    null,
+    mapDispatchToProps
 )(App);
 
 export default RoutingApp;

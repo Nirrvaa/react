@@ -6,13 +6,13 @@ import { toggleTodo } from '../../../actions';
 import todosService from '../../../services/todos-service';
 
 const mapStateToProps = (state, ownProps) => {
-	return {
-		todos: todosService.getTodosByFilter(state.todos, ownProps.filter)
-	};
+    return {
+        todos: todosService.getTodosByFilter(state.todos, ownProps.filter)
+    };
 };
 
 const VisibleTodoList = connect(
-	mapStateToProps
+    mapStateToProps
 )(TodoList);
 
 export default VisibleTodoList;

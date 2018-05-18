@@ -12,11 +12,11 @@ import 'reset-css';
 import '../../assets/styles/index.scss';
 
 const Root = () => (
-	<Provider store={store}>
-		<Router>
-			<Route path='/:base?/:filter?' component={RoutingApp} />
-		</Router>
-	</Provider>
+    <Provider store={store}>
+        <Router>
+            <Route path='/:base?/:filter?' component={RoutingApp} />
+        </Router>
+    </Provider>
 );
 
 export default Root;
