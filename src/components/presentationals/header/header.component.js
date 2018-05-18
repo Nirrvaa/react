@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { TODO_LIST, SHOW_ALL, ADD_TODO } from '../../../assets/json/routes';
 
 const Header = ({ match: { params } }) => {
-    const isTodoListOpened = () => ~params[0].indexOf(TODO_LIST);
+    const isTodoListOpened = () => params.base === TODO_LIST;
     return (
         <header className='header'>
             <h1 className='header__caption'>N</h1>

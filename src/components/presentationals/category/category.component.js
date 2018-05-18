@@ -10,7 +10,7 @@ const Category = ({ active, count, children, filter, onClick }) => {
 	return (
 		<div>
 			<Link to={`/${TODO_LIST}/${filter}`}>
-			<button className={className} onClick={onClick}>
+			<button className={className}>
 				{children}
 			</button>
 			</Link>
