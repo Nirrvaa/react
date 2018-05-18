@@ -1,3 +1,4 @@
-import Category from './category.component';
 import './category.component.scss';
+
+import Category from './category.component';
 export default Category;
