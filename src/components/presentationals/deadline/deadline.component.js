@@ -1,9 +1,14 @@
+import React, { Component } from 'react';
+
 class Deadline extends Component {
     constructor(props) {
         super(props);
 
         this.state = {};
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.currentYear = this.currentYear.bind(this);
+        this.currentMonth = this.currentMonth.bind(this);
+        this.currentDate = this.currentDate.bind(this);
     }
 
     handleInputChange(event) {
@@ -16,17 +21,30 @@ class Deadline extends Component {
         });
     }
 
+    get currentYear() {
+        const date = new Date();
+        return date.getFullYear();
+    }
+
+    get currentMonth() {
+        const date = new Date();
+        return date.getMonth() + 1;
+    }
+
+    get currentDate() {
+        const date = new Date();
+        return date.getDate();
+    }
+
     render() {
         return (
-            <section>
+            <section className="deadLine">
                 <ul>
                     <li>
                         <input
                             name='date'
                             type='number'
                             value={this.state.date}
-                            disabled={!this.state.deadline}
-                            required
                             min='1'
                             max='31'
                             onChange={this.handleInputChange} />
@@ -36,8 +54,6 @@ class Deadline extends Component {
                             name='month'
                             type='number'
                             value={this.state.month}
-                            disabled={!this.state.deadline}
-                            required={this.state.deadline}
                             min='1'
                             max='12'
                             onChange={this.handleInputChange} />
@@ -47,8 +63,6 @@ class Deadline extends Component {
                             name='year'
                             type='number'
                             value={this.state.year}
-                            disabled={!this.state.deadline}
-                            required={this.state.deadline}
                             min={this.currentYear}
                             max='9999'
                             onChange={this.handleInputChange} />
@@ -57,35 +71,29 @@ class Deadline extends Component {
                 <ul>
                     <li>
                         <input
-                            name='date'
+                            name='hours'
                             type='number'
-                            value={this.state.date}
-                            disabled={!this.state.deadline}
-                            required
-                            min='1'
-                            max='31'
+                            value='23'
+                            min='0'
+                            max='23'
                             onChange={this.handleInputChange} />
                     </li>
                     <li>
                         <input
-                            name='month'
+                            name='minutes'
                             type='number'
-                            value={this.state.month}
-                            disabled={!this.state.deadline}
-                            required={this.state.deadline}
-                            min='1'
-                            max='12'
+                            value='59'
+                            min='0'
+                            max='59'
                             onChange={this.handleInputChange} />
                     </li>
                     <li>
                         <input
-                            name='year'
+                            name='seconds'
                             type='number'
-                            value={this.state.year}
-                            disabled={!this.state.deadline}
-                            required={this.state.deadline}
-                            min={this.currentYear}
-                            max='9999'
+                            value='59'
+                            min='0'
+                            max='59'
                             onChange={this.handleInputChange} />
                     </li>
                 </ul>
