@@ -3,21 +3,22 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { TODO_LIST } from '../../../assets/json/routes'
 
-const Category = ({ active, count, children, filter }) => {
+const Category = ({ active, count, children, filter, onClick }) => {
 
-	const className = () => `button ${ active ? 'button_active' : '' }`;
+	const className = `button ${active ? 'button_active' : ''}`;
 
 	return (
 		<div>
 			<Link to={`/${TODO_LIST}/${filter}`}>
-			<button className={className()}>
-				{ children }
+			<button className={className} onClick={onClick}>
+				{children}
 			</button>
 			</Link>
-			<span>
-				{ count }
-			</span>
-		</div>
+		<span>
+			{count}
+		</span>
+			
+		</div >
 	);
 };
 

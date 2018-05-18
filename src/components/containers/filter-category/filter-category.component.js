@@ -21,15 +21,20 @@ const getTodosCount = (todos, filter) => {
 	}
 };
 
-const mapStateToProps = (state, ownProps) => {
-	return {
-		active: ownProps.filter === state.visibilityFilter,
-		count: getTodosCount(state.todos, ownProps.filter)
-	};
-};
+const mapStateToProps = (state, ownProps) => ({
+	active: ownProps.filter === state.visibilityFilter,
+	count: getTodosCount(state.todos, ownProps.filter)
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+	onClick() {
+		dispatch(setVisibilityFilter(ownProps.filter));
+	}
+});
 
 const FilterCategory = connect(
-	mapStateToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(Category);
 
 export default FilterCategory;
