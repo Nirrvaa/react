@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { TODO_LIST } from '../../../assets/json/routes'
+import { TODO_LIST } from '../../../assets/json/routes';
 
 const Category = ({ active, count, children, filter, onClick }) => {
 
@@ -10,13 +10,13 @@ const Category = ({ active, count, children, filter, onClick }) => {
 	return (
 		<div>
 			<Link to={`/${TODO_LIST}/${filter}`}>
-			<button className={className}>
-				{children}
-			</button>
+				<button className={className}>
+					{children}
+				</button>
 			</Link>
-		<span>
-			{count}
-		</span>
+			<span>
+				{count}
+			</span>
 			
 		</div >
 	);

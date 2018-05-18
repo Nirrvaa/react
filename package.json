@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "./node_modules/.bin/eslint ./src/",
+    "lint:fix": "./node_modules/.bin/eslint ./src/ --fix",
     "start": "webpack-dev-server --hot --mode development",
     "build": "webpack --mode production"
   },

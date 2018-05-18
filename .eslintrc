@@ -21,7 +21,7 @@
             "tab"
         ],
         "linebreak-style": [
-            "error",
+            0,
             "windows"
         ],
         "quotes": [
@@ -34,6 +34,7 @@
         ],
         "no-unused-vars": [
             0
-        ]
+        ],
+        "no-fallthrough": 0
     }
 }
