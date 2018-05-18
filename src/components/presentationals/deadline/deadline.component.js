@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import timeService from '../../../services/time-service';
+
 
 class Deadline extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            year: timeService.currentYear,
+            month: timeService.currentMonth,
+            date: timeService.currentDate
+        };
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.currentYear = this.currentYear.bind(this);
-        this.currentMonth = this.currentMonth.bind(this);
-        this.currentDate = this.currentDate.bind(this);
     }
 
     handleInputChange(event) {
@@ -21,24 +24,9 @@ class Deadline extends Component {
         });
     }
 
-    get currentYear() {
-        const date = new Date();
-        return date.getFullYear();
-    }
-
-    get currentMonth() {
-        const date = new Date();
-        return date.getMonth() + 1;
-    }
-
-    get currentDate() {
-        const date = new Date();
-        return date.getDate();
-    }
-
     render() {
         return (
-            <section className="deadLine">
+            <div className="deadLine">
                 <ul>
                     <li>
                         <input
@@ -97,7 +85,7 @@ class Deadline extends Component {
                             onChange={this.handleInputChange} />
                     </li>
                 </ul>
-            </section>
+            </div>
         );
     }
 }

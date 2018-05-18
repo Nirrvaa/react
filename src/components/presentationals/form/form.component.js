@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import { ENABLE_DEADLINE, DISABLE_DEADLINE, ADD_TODO } from '../../../assets/json/routes';
+
+import Deadline from '../deadline';
 
 class Form extends Component {
     constructor(props) {
@@ -7,42 +12,24 @@ class Form extends Component {
 
         this.state = {
             title: '',
-            deadline: false,
-            year: this.currentYear,
-            month: this.currentMonth,
-            date: this.currentDate
+            deadline: false
         };
 
+        this.linkURL = this.linkURL.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-        this.setEmptyInputFlags = this.setEmptyInputFlags.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    setEmptyInputFlags() {
-        if (!this.state.title) {
-            this.setState({ emptyTitle: true });
-        }
-
-        if (!this.state.deadline) {
-            return;
-        }
-
-        if (!this.state.year) {
-            this.setState({ emptyYear: true });
-        }
-        if (!this.state.month) {
-            this.setState({ emptyMonth: true });
-        }
-        if (!this.state.date) {
-            this.setState({ emptyDate: true });
-        }
+    linkURL() {
+        const filter = this.props.deadline ? DISABLE_DEADLINE : ENABLE_DEADLINE;
+        return `/${ADD_TODO}/${filter}`;
     }
 
     handleSubmit() {
         this.props.addTodo({
             title: this.state.title,
-            deadline: this.state.deadline,
+            deadline: this.props.deadline,
             year: this.state.year,
             month: this.state.year,
             date: this.state.date
@@ -57,7 +44,7 @@ class Form extends Component {
 
     handleInputChange(event) {
         const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const value = target.value;
         const name = target.name;
 
         this.setState({
@@ -71,29 +58,29 @@ class Form extends Component {
                 <form
                     className='addTodo'
                     onSubmit={this.onSubmit}>
-                    <label>
-						Task:
-                        <input required
+                    <section>
+                        <label htmlFor='title'>title:</label>
+                        <input
+                            required
+                            id='title'
                             name='title'
                             type='text'
                             placeholder='type your Todo'
                             value={this.state.title}
                             onChange={this.handleInputChange} />
-                    </label>
+                    </section>
 
-                    <div>
-                        <input
-                            id='deadline'
-                            name='deadline'
-                            type='checkbox'
-                            checked={this.state.deadline}
-                            onChange={this.handleInputChange} />
-                        <label htmlFor='deadline'></label>
-                        
-                    </div>
+                    <section>
+                        <Link to={this.linkURL()}>
+                            <button type='button'>
+                                {`${this.props.deadline ? 'disable' : 'enable'} deadline`}
+                            </button>
+                        </Link>
+                        {this.props.deadline ? <Deadline /> : null}
+                    </section>
 
                     <button type='submit'>
-						Add Todo
+                        add Todo
                     </button>
                 </form>
             </main>

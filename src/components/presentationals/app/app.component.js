@@ -8,6 +8,7 @@ import { TODO_LIST, SHOW_ALL, ADD_TODO } from '../../../assets/json/routes';
 class App extends Component {
     constructor(props) {
         super(props);
+        this.props.setVisibilityFilter(props);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -20,7 +21,7 @@ class App extends Component {
                 <Route component={Header} />
                 <Switch>
                     <Route exact path={`/${TODO_LIST}/:filter`} component={TodoListPage} />
-                    <Route exact path={`/${ADD_TODO}`} component={AddTodo} />
+                    <Route exact path={`/${ADD_TODO}/:filter`} component={AddTodo} />
                     <Redirect to={`/${TODO_LIST}/${SHOW_ALL}`} />
                 </Switch>
             </div>

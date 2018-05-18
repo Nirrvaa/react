@@ -1,7 +1,7 @@
 {
   "name": "nova",
   "version": "1.0.0",
-  "description": "",
+  "description": "time planning tool",
   "main": "index.js",
   "scripts": {
     "test": "cross-env jest",
