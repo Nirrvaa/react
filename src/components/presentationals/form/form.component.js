@@ -104,41 +104,7 @@ class Form extends Component {
                             checked={this.state.deadline}
                             onChange={this.handleInputChange} />
                         <label htmlFor='deadline'></label>
-                        <ul>
-                            <li>
-                                <input
-                                    name='date'
-                                    type='number'
-                                    value={this.state.date}
-                                    disabled={!this.state.deadline}
-                                    required={this.state.deadline}
-                                    min='1'
-                                    max='31'
-                                    onChange={this.handleInputChange} />
-                            </li>
-                            <li>
-                                <input
-                                    name='month'
-                                    type='number'
-                                    value={this.state.month}
-                                    disabled={!this.state.deadline}
-                                    required={this.state.deadline}
-                                    min='1'
-                                    max='12'
-                                    onChange={this.handleInputChange} />
-                            </li>
-                            <li>
-                                <input
-                                    name='year'
-                                    type='number'
-                                    value={this.state.year}
-                                    disabled={!this.state.deadline}
-                                    required={this.state.deadline}
-                                    min={this.currentYear}
-                                    max='9999'
-                                    onChange={this.handleInputChange} />
-                            </li>
-                        </ul>
+                        
                     </div>
 
                     <button type='submit'>
