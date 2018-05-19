@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { ENABLE_DEADLINE, DISABLE_DEADLINE, ADD_TODO } from '../../../assets/json/routes';
-
-import Deadline from '../deadline';
+import { getCurrentYear, getCurrentMonth, getCurrentDate } from '../../../services/time-service';
 
 class Form extends Component {
     constructor(props) {
@@ -12,7 +11,13 @@ class Form extends Component {
 
         this.state = {
             title: '',
-            deadline: false
+            deadline: false,
+            year: getCurrentYear(),
+            month: getCurrentMonth() + 1,
+            date: getCurrentDate() + 1,
+            hours: '00',
+            minutes: '00',
+            seconds: '00'
         };
 
         this.linkURL = this.linkURL.bind(this);
@@ -31,14 +36,16 @@ class Form extends Component {
             title: this.state.title,
             deadline: this.props.deadline,
             year: this.state.year,
-            month: this.state.year,
-            date: this.state.date
+            month: this.state.month,
+            date: this.state.date,
+            hours: this.state.date,
+            minutes: this.state.date,
+            seconds: this.state.seconds
         });
     }
 
     onSubmit(event) {
         event.preventDefault();
-        this.setEmptyInputFlags();
         this.handleSubmit();
     }
 
@@ -76,7 +83,74 @@ class Form extends Component {
                                 {`${this.props.deadline ? 'disable' : 'enable'} deadline`}
                             </button>
                         </Link>
-                        {this.props.deadline ? <Deadline /> : null}
+                        {this.props.deadline ? (
+                            <div className="deadLine">
+                                <ul>
+                                    <li>
+                                        <input
+                                            required
+                                            name='date'
+                                            type='number'
+                                            value={this.state.date}
+                                            min='1'
+                                            max='31'
+                                            onChange={this.handleInputChange} />
+                                    </li>
+                                    <li>
+                                        <input
+                                            required
+                                            name='month'
+                                            type='number'
+                                            value={this.state.month}
+                                            min='1'
+                                            max='12'
+                                            onChange={this.handleInputChange} />
+                                    </li>
+                                    <li>
+                                        <input
+                                            required
+                                            name='year'
+                                            type='number'
+                                            value={this.state.year}
+                                            min={getCurrentYear()}
+                                            max='9999'
+                                            onChange={this.handleInputChange} />
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <input
+                                            required
+                                            name='hours'
+                                            type='number'
+                                            value={this.state.hours}
+                                            min='0'
+                                            max='23'
+                                            onChange={this.handleInputChange} />
+                                    </li>
+                                    <li>
+                                        <input
+                                            required
+                                            name='minutes'
+                                            type='number'
+                                            value={this.state.minutes}
+                                            min='0'
+                                            max='59'
+                                            onChange={this.handleInputChange} />
+                                    </li>
+                                    <li>
+                                        <input
+                                            required
+                                            name='seconds'
+                                            type='number'
+                                            value={this.state.seconds}
+                                            min='0'
+                                            max='59'
+                                            onChange={this.handleInputChange} />
+                                    </li>
+                                </ul>
+                            </div>
+                        ) : null}
                     </section>
 
                     <button type='submit'>

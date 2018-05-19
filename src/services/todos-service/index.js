@@ -1,2 +1,1 @@
-import todosService from './todos.service';
-export default todosService;
+export * from './todos.service';

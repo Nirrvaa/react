@@ -1,2 +1,1 @@
-import timeSerivce from './time.service';
-export default timeSerivce;
+export * from './time.service';

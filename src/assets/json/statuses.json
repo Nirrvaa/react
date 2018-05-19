@@ -1,0 +1,6 @@
+{
+    "ACTIVE": "ACTIVE",
+    "PENDING": "PENDING",
+    "FAILED": "FAILED",
+    "COMPLETED": "COMPLETED"
+}

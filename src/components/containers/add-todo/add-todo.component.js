@@ -6,7 +6,7 @@ import { ENABLE_DEADLINE } from '../../../assets/json/visibility-filters';
 
 import Form from '../../presentationals/form';
 
-const mapStateToProps = (state, ownProps) =>({
+const mapStateToProps = state =>({
     deadline: state.visibilityFilter === ENABLE_DEADLINE
 });
 

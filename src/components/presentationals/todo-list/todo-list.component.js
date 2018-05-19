@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Todo from '../todo';
+import uniqid from 'uniqid';
 
-const TodoList = ({ todos }) => (
-    <ul className='todo-list'>
-        {todos.map(todo => (
-            <li key={todo.id} className='todo-list__item'>
-                <Todo {...todo} />
-            </li>
-        ))}
-    </ul>
-);
+const TodoList = ({ todos, removeTodo }) => {
+    return (
+        <ul className='todo-list'>
+            {todos.map(todo => (
+                <li key={uniqid()} className='todo-list__item'>
+                    <Todo {...todo}  removeTodo={() => removeTodo(todo.id)}/>
+                </li>
+            ))}
+        </ul>
+    )
+};
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(
@@ -21,12 +24,7 @@ TodoList.propTypes = {
             year: PropTypes.number.isRequired,
             month: PropTypes.number.isRequired,
             date: PropTypes.number.isRequired,
-            status: PropTypes.shape({
-                active: PropTypes.bool.isRequired,
-                completed: PropTypes.bool.isRequired,
-                failed: PropTypes.bool.isRequired,
-                pending: PropTypes.bool.isRequired
-            }).isRequired
+            status: PropTypes.string.isRequired
         }).isRequired
     ).isRequired
 };

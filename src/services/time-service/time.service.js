@@ -1,19 +1,33 @@
-const timeService = {
-    get currentYear() {
-        const date = new Date();
-        return date.getFullYear();
-    },
+const getCurrentYear = () => {
+    const date = new Date();
+    return date.getFullYear();
+}
 
-    get currentMonth() {
-        const date = new Date();
-        return date.getMonth() + 1;
-    },
+const getCurrentMonth = () => {
+    const date = new Date();
+    return date.getMonth();
+}
 
-    get currentDate() {
-        const date = new Date();
-        return date.getDate();
+const getCurrentDate = () => {
+    const date = new Date();
+    return date.getDate();
+}
+
+const transformValue = value => {
+    if (!value.length) {
+        return '00';
     }
-};
+    
+    if (value.length === 1) {
+        return `0${value}`;
+    }
+
+    return value;
+}
 
 
-export default timeService;
+export {
+    getCurrentYear,
+    getCurrentMonth,
+    getCurrentDate
+}

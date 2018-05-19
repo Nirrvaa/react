@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../../../actions';
 import Category from '../../presentationals/category';
 
-import todosService from '../../../services/todos-service';
+import { getTodosByFilter } from '../../../services/todos-service';
 
 const mapStateToProps = (state, ownProps) =>({
     active: ownProps.filter === state.visibilityFilter,
-    count: todosService.getTodosByFilter(state.todos, ownProps.filter).length
+    count: getTodosByFilter(state.todos, ownProps.filter).length
 });
 
 const FilterCategory = connect(

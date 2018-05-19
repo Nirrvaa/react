@@ -1,33 +1,30 @@
-import { ADD_TODO, TOGGLE_TODO } from '../assets/json/actions.json';
+import { ADD_TODO, REMOVE_TODO, CHANGE_TODO_STATUS } from '../assets/json/actions';
+import { PENDING } from '../assets/json/statuses';
 import produce from 'immer';
 
 export default function (state = [], action) {
     return produce(state, draft => {
         switch (action.type) {
-        case ADD_TODO:
-            draft.push({
-                id: action.id,
-                title: action.data.title,
-                deadline: action.data.deadline,
-                year: action.data.year,
-                month: action.data.month,
-                date: action.data.date,
-                status: {
-                    failed: false,
-                    completed: false,
-                    active: false,
-                    pending: true
-                }
-            });
-        case TOGGLE_TODO:
-            draft.forEach((todo, index) => {
-                if (index === action.index) {
-                    for (let item of todo.status) {
-                        item = false;
+            case ADD_TODO:
+                draft.push({
+                    id: action.id,
+                    title: action.data.title,
+                    deadline: action.data.deadline,
+                    year: action.data.year,
+                    month: action.data.month,
+                    date: action.data.date,
+                    status: PENDING
+                });
+                break;
+            case REMOVE_TODO:
+                draft.forEach((todo, index) => {
+                    if (todo.id === action.id) {
+                        draft.splice(index, 1);
                     }
-                    todo.status[action.status] = true;
-                }
-            });
+                });
+                break;
+            case CHANGE_TODO_STATUS:
+                draft.find(todo => todo.id === action.id).status = action.status;
         }
     });
 }

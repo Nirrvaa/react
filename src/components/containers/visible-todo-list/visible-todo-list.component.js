@@ -1,18 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TodoList from '../../presentationals/todo-list';
-import { toggleTodo } from '../../../actions';
 
-import todosService from '../../../services/todos-service';
+import { removeTodo } from '../../../actions';
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        todos: todosService.getTodosByFilter(state.todos, ownProps.filter)
-    };
-};
+import { getTodosByFilter } from '../../../services/todos-service';
+
+const mapStateToProps = (state, ownProps) => ({
+    todos: getTodosByFilter(state.todos, ownProps.filter)
+});
+
+const mapDispatchToProps = dispatch => ({
+    removeTodo(id) {
+        dispatch(removeTodo(id));
+    }
+});
 
 const VisibleTodoList = connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(TodoList);
 
 export default VisibleTodoList;
