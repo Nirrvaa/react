@@ -1,17 +1,17 @@
 const getCurrentYear = () => {
     const date = new Date();
     return date.getFullYear();
-}
+};
 
 const getCurrentMonth = () => {
     const date = new Date();
     return date.getMonth();
-}
+};
 
 const getCurrentDate = () => {
     const date = new Date();
     return date.getDate();
-}
+};
 
 const transformValue = value => {
     if (!value.length) {
@@ -23,11 +23,11 @@ const transformValue = value => {
     }
 
     return value;
-}
+};
 
 
 export {
     getCurrentYear,
     getCurrentMonth,
     getCurrentDate
-}
+};

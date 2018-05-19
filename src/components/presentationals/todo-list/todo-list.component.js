@@ -12,7 +12,7 @@ const TodoList = ({ todos, removeTodo }) => {
                 </li>
             ))}
         </ul>
-    )
+    );
 };
 
 TodoList.propTypes = {
