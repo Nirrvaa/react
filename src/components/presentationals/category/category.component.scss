@@ -1,6 +1,46 @@
-.button {
-    background-color: green;
+@import '../../../assets/styles/variables.scss';
+
+.category {
+    background-color: $appBackground;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: .1em;
     &_active {
-        background-color: red;
+        background-color:$headerBackground;
     }
+    &__item {
+        font-weight: 500;
+        display: block;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
+}
+
+.link {
+    text-transform: uppercase;
+    font-size: .8em;
+    text-decoration: none;
+    color: $headerBorderColor;
+    width: 75%;
+    &:hover {
+        background-color: rgba(10, 10, 10, 0.1);
+    }
+    &:active {
+        background-color: rgba(19, 19, 19, 0.185);
+    }
+}
+
+.count {
+    width: 25%;
+    justify-content: center;
+    border-left: .1em solid $headerBorderColor;
+    margin-left: .1em; 
+    cursor: default;
 }

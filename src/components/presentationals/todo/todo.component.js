@@ -6,7 +6,7 @@ import TodoStatusResolver from '../../containers/todo-status-resolver';
 import { ACTIVE } from '../../../assets/json/statuses';
 
 const Todo = ({ removeTodo, status, title, timer, id, deadline }) => (
-    <article className={`todo todo_${status}`}>
+    <article className={`todo todo_${status.toLowerCase()}`}>
         <header className='todo__header'>
             <h4 className='todo__title'>
                 {title}
@@ -18,13 +18,13 @@ const Todo = ({ removeTodo, status, title, timer, id, deadline }) => (
         <footer className="todo__footer">
             {
                 status === ACTIVE ? (
-                    <div className='toto__timer'>
+                    <div className='todo__timer'>
                         <TodoTimer timer={timer} deadline={deadline} />
                     </div>
                 ) : null
             }
             <button className='todo__remove' onClick={removeTodo}>
-                remove
+                ✘
             </button>
         </footer>
     </article>

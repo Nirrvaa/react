@@ -1,0 +1,48 @@
+@import '../../../assets/styles/variables';
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: $basePadding;
+    background-color: $headerBackground;
+    border-bottom: $headerBorder;
+    
+    &__logo {
+        background-color: $appBackground;
+        position: relative;
+        width: $logoSide;
+        height: $logoSide;
+        border: $headerBorder;
+        border-radius: $logoBorderRadius;
+        font-weight: 600;
+        cursor: default;
+    }
+    &__caption {
+        display: block;
+        font-size: $captionFontSize;
+        color: $captionColor;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    &__button {
+        border: $headerBorder;
+        border-radius: $logoBorderRadius;
+        background-color: $appBackground;
+        font-size: 1.2em;
+        text-transform: capitalize;
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(231, 231, 231);
+        }
+        &:active {
+            background-color: rgb(211, 209, 209);
+        }
+    }
+}

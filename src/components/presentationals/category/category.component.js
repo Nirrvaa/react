@@ -5,20 +5,15 @@ import { TODO_LIST } from '../../../assets/json/routes';
 
 const Category = ({ active, count, children, filter, onClick }) => {
 
-    const className = `button ${active ? 'button_active' : ''}`;
-
     return (
-        <div>
-            <Link to={`/${TODO_LIST}/${filter}`}>
-                <button className={className}>
-                    {children}
-                </button>
+        <div className={`category ${active ? 'category_active' : ''}`}>
+            <Link className='category__item link' to={`/${TODO_LIST}/${filter}`}>
+                {children}
             </Link>
-            <span>
+            <span className='category__item count'>
                 {count}
             </span>
-			
-        </div >
+        </div>
     );
 };
 

@@ -1,7 +1,13 @@
 @import './variables.scss';
 
-#root * {
-    box-sizing: border-box;
-    font-family: $basicFont;
+#root {
+    height: 100vh;
+    * {
+        font-family: $basicFont;
+        box-sizing: border-box;
+        transition: .1s;
+        &:focus {
+            outline: 0;
+        }
+    }
 }
-

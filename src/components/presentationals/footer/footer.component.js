@@ -3,33 +3,30 @@ import FilterCategory from '../../containers/filter-category';
 import VisibilityFilters from '../../../assets/json/visibility-filters';
 
 const Footer = () => (
-    <footer>
-        <h2>
-			Show:
-        </h2>
-        <ul>
-            <li>
+    <footer className='footer'>
+        <ul className='categories'>
+            <li className='categories__item'>
                 <FilterCategory filter={VisibilityFilters.SHOW_ALL}>
 					All
                 </FilterCategory>
             </li>
-            <li>
+            <li className='categories__item'>
                 <FilterCategory filter={VisibilityFilters.SHOW_PENDING}>
 					Pending
                 </FilterCategory>
             </li>
-            <li>
+            <li className='categories__item'>
                 <FilterCategory filter={VisibilityFilters.SHOW_ACTIVE}>
 					Active
                 </FilterCategory>
             </li>
-            <li>
+            <li className='categories__item'>
                 <FilterCategory filter={VisibilityFilters.SHOW_COMPLETED}>
 					Completed
                 </FilterCategory>
             </li>
 			
-            <li>
+            <li className='categories__item'>
                 <FilterCategory filter={VisibilityFilters.SHOW_FAILED}>
 					Failed
                 </FilterCategory>

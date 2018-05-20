@@ -7,7 +7,7 @@ import { removeTodo } from '../../../actions';
 import { getTodosByFilter } from '../../../services/todos-service';
 
 const mapStateToProps = (state, ownProps) => ({
-    todos: getTodosByFilter(state.todos, ownProps.filter)
+    todos: getTodosByFilter(state.todos, ownProps.match.params.filter)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -8,7 +8,9 @@ const Header = ({ match: { params } }) => {
     const filterURL = isTodoListOpened() ? DISABLE_DEADLINE : SHOW_ALL;
     return (
         <header className='header'>
-            <h1 className='header__caption'>N</h1>
+            <h1 className='header__logo'>
+                <span className="header__caption">N</span>
+            </h1>
             <Link to={`/${baseURL}/${filterURL}`}>
                 <button className='header__button'>
                     {isTodoListOpened() ? 'add todo' : 'back to list'}

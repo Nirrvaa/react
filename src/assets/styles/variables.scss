@@ -1,8 +1,16 @@
-// typo
-$headerFontSize: 2em;
 $regularTextFontSize: 1em;
-$basicFont: 'Roboto', sans-serif;
+$basicFont: 'Space Mono', monospace;
 
-// sizes
-$maxWidth: 900px;
-$minWidth: 300px;
+$basePadding: 15px;
+
+$appBackground: #fff; 
+$headerBackground: #87CEFA; 
+
+$headerBorderSize: 3px;
+$headerBorderColor: #1f1f36;
+$headerBorder: $headerBorderSize solid $headerBorderColor;
+
+$captionFontSize: 2.5em;
+$captionColor: $headerBorderColor;
+$logoSide: 3em;
+$logoBorderRadius: 6px;

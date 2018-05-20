@@ -65,103 +65,101 @@ class Form extends Component {
 
     render() {
         return (
-            <main className='main'>
-                <form
-                    className='addTodo'
-                    onSubmit={this.onSubmit}>
-                    <section>
-                        <label htmlFor='title'>title:</label>
-                        <input
-                            required
-                            id='title'
-                            name='title'
-                            type='text'
-                            placeholder='type your Todo'
-                            value={this.state.title}
-                            onChange={this.handleInputChange} />
-                    </section>
+            <form
+                className='addTodo'
+                onSubmit={this.onSubmit}>
+                <section>
+                    <label htmlFor='title'>title:</label>
+                    <input
+                        required
+                        id='title'
+                        name='title'
+                        type='text'
+                        placeholder='type your Todo'
+                        value={this.state.title}
+                        onChange={this.handleInputChange} />
+                </section>
 
-                    <section>
-                        <Link to={this.linkURL()}>
-                            <button type='button'>
-                                {`${this.props.deadline ? 'disable' : 'enable'} deadline`}
-                            </button>
-                        </Link>
-                        {this.props.deadline ? (
-                            <div className="deadLine">
-                                <ul>
-                                    <li>
-                                        <input
-                                            required
-                                            name='date'
-                                            type='number'
-                                            value={this.state.date}
-                                            min='1'
-                                            max='31'
-                                            onChange={this.handleInputChange} />
-                                    </li>
-                                    <li>
-                                        <input
-                                            required
-                                            name='month'
-                                            type='number'
-                                            value={this.state.month}
-                                            min='1'
-                                            max='12'
-                                            onChange={this.handleInputChange} />
-                                    </li>
-                                    <li>
-                                        <input
-                                            required
-                                            name='year'
-                                            type='number'
-                                            value={this.state.year}
-                                            min={getCurrentYear()}
-                                            max='9999'
-                                            onChange={this.handleInputChange} />
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <input
-                                            required
-                                            name='hours'
-                                            type='number'
-                                            value={this.state.hours}
-                                            min='0'
-                                            max='23'
-                                            onChange={this.handleInputChange} />
-                                    </li>
-                                    <li>
-                                        <input
-                                            required
-                                            name='minutes'
-                                            type='number'
-                                            value={this.state.minutes}
-                                            min='0'
-                                            max='59'
-                                            onChange={this.handleInputChange} />
-                                    </li>
-                                    <li>
-                                        <input
-                                            required
-                                            name='seconds'
-                                            type='number'
-                                            value={this.state.seconds}
-                                            min='0'
-                                            max='59'
-                                            onChange={this.handleInputChange} />
-                                    </li>
-                                </ul>
-                            </div>
-                        ) : null}
-                    </section>
+                <section>
+                    <Link to={this.linkURL()}>
+                        <button type='button'>
+                            {`${this.props.deadline ? 'disable' : 'enable'} deadline`}
+                        </button>
+                    </Link>
+                    {this.props.deadline ? (
+                        <div className="deadLine">
+                            <ul>
+                                <li>
+                                    <input
+                                        required
+                                        name='date'
+                                        type='number'
+                                        value={this.state.date}
+                                        min='1'
+                                        max='31'
+                                        onChange={this.handleInputChange} />
+                                </li>
+                                <li>
+                                    <input
+                                        required
+                                        name='month'
+                                        type='number'
+                                        value={this.state.month}
+                                        min='1'
+                                        max='12'
+                                        onChange={this.handleInputChange} />
+                                </li>
+                                <li>
+                                    <input
+                                        required
+                                        name='year'
+                                        type='number'
+                                        value={this.state.year}
+                                        min={getCurrentYear()}
+                                        max='9999'
+                                        onChange={this.handleInputChange} />
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <input
+                                        required
+                                        name='hours'
+                                        type='number'
+                                        value={this.state.hours}
+                                        min='0'
+                                        max='23'
+                                        onChange={this.handleInputChange} />
+                                </li>
+                                <li>
+                                    <input
+                                        required
+                                        name='minutes'
+                                        type='number'
+                                        value={this.state.minutes}
+                                        min='0'
+                                        max='59'
+                                        onChange={this.handleInputChange} />
+                                </li>
+                                <li>
+                                    <input
+                                        required
+                                        name='seconds'
+                                        type='number'
+                                        value={this.state.seconds}
+                                        min='0'
+                                        max='59'
+                                        onChange={this.handleInputChange} />
+                                </li>
+                            </ul>
+                        </div>
+                    ) : null}
+                </section>
 
-                    <button type='submit'>
-                        add Todo
+                <button type='submit'>
+                    add Todo
                     </button>
-                </form>
-            </main>
+            </form>
         );
     }
 }

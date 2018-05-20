@@ -1,0 +1,14 @@
+@import "../../../assets/styles/variables";
+
+.app {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    background-color: $appBackground;
+}
+.main {
+    margin-bottom: auto;
+    padding: $basePadding 0;
+}

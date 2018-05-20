@@ -1,0 +1,50 @@
+@import '../../../assets/styles/variables';
+
+.todo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    &__header {
+        width: 60%;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    &__title {
+        font-size: 1.1em;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+    &__status {
+        margin-top: .5em;
+    }
+    &__footer {
+        width: 40%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__timer {
+        width: 100%;
+        text-align: center;
+        padding-left: .5em;
+        font-size: .9em;
+        margin-right: auto;
+    }
+    &__remove {
+        cursor: pointer;
+        border-radius: 50%;
+        display: block;
+        flex-shrink: 0; 
+        font-size: 1.5em;
+        color: #F0F8FF;
+        border: none;
+        background-color: $headerBorderColor;
+        width: 50px;
+        height: 50px;
+        &:hover {
+            background-color: rgb(190, 0, 0);
+        } 
+    }
+}

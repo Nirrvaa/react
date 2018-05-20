@@ -8,7 +8,7 @@ const TodoList = ({ todos, removeTodo }) => {
         <ul className='todo-list'>
             {todos.map(todo => (
                 <li key={uniqid()} className='todo-list__item'>
-                    <Todo {...todo}  removeTodo={() => removeTodo(todo.id)}/>
+                    <Todo {...todo} removeTodo={() => removeTodo(todo.id)} />
                 </li>
             ))}
         </ul>
