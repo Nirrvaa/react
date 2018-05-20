@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { createTimer } from '../../../services/time-service';
+
 import { ENABLE_DEADLINE, DISABLE_DEADLINE, ADD_TODO } from '../../../assets/json/routes';
 import { getCurrentYear, getCurrentMonth, getCurrentDate } from '../../../services/time-service';
 
@@ -15,9 +17,9 @@ class Form extends Component {
             year: getCurrentYear(),
             month: getCurrentMonth() + 1,
             date: getCurrentDate() + 1,
-            hours: '00',
-            minutes: '00',
-            seconds: '00'
+            hours: 0,
+            minutes: 0,
+            seconds: 0
         };
 
         this.linkURL = this.linkURL.bind(this);
@@ -35,12 +37,14 @@ class Form extends Component {
         this.props.addTodo({
             title: this.state.title,
             deadline: this.props.deadline,
-            year: this.state.year,
-            month: this.state.month,
-            date: this.state.date,
-            hours: this.state.date,
-            minutes: this.state.date,
-            seconds: this.state.seconds
+            timer: createTimer({
+                year: this.state.year,
+                month: this.state.month,
+                date: this.state.date,
+                hours: this.state.hours,
+                minutes: this.state.minutes,
+                seconds: this.state.seconds
+            })
         });
     }
 

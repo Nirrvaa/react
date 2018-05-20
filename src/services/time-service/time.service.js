@@ -13,21 +13,20 @@ const getCurrentDate = () => {
     return date.getDate();
 };
 
-const transformValue = value => {
-    if (!value.length) {
-        return '00';
-    }
-    
-    if (value.length === 1) {
-        return `0${value}`;
-    }
-
-    return value;
+const createTimer = (timerObj) => {
+    return new Date(
+        timerObj.year, 
+        timerObj.month - 1, 
+        timerObj.date, 
+        timerObj.hours, 
+        timerObj.minutes, 
+        timerObj.seconds
+    );
 };
-
 
 export {
     getCurrentYear,
     getCurrentMonth,
-    getCurrentDate
+    getCurrentDate,
+    createTimer
 };

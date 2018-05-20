@@ -21,9 +21,6 @@ TodoList.propTypes = {
             id: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
             deadline: PropTypes.bool.isRequired,
-            year: PropTypes.number.isRequired,
-            month: PropTypes.number.isRequired,
-            date: PropTypes.number.isRequired,
             status: PropTypes.string.isRequired
         }).isRequired
     ).isRequired
