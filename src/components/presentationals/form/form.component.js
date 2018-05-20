@@ -158,7 +158,7 @@ class Form extends Component {
 
                 <button type='submit'>
                     add Todo
-                    </button>
+                </button>
             </form>
         );
     }
