@@ -31,7 +31,12 @@ const Todo = ({ removeTodo, status, title, timer, id, deadline }) => (
 );
 
 Todo.propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    removeTodo: PropTypes.func.isRequired,
+    timer: PropTypes.object.isRequired,
+    id: PropTypes.string.isRequired,
+    deadline: PropTypes.bool.isRequired
 };
 
 export default Todo;

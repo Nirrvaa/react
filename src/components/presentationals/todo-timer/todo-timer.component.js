@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class TodoTimer extends Component {
     constructor(props) {
@@ -7,6 +8,16 @@ class TodoTimer extends Component {
         this.state = {
             timer: this.props.timer
         };
+
+        this.tick = this.tick.bind(this);
+        this.createMessage = this.createMessage.bind(this);
+        this.getHoursLeft = this.getHoursLeft.bind(this);
+        this.getMinutesLeft = this.getMinutesLeft.bind(this);
+        this.getSecondsLeft = this.getSecondsLeft.bind(this);
+        this.addPrefixZero = this.addPrefixZero.bind(this);
+        this.stopTimer = this.stopTimer.bind(this);
+        this.startTimer = this.startTimer.bind(this);
+
     }
 
     startTimer() {
@@ -75,5 +86,11 @@ class TodoTimer extends Component {
         );
     }
 }
+
+TodoTimer.propTypes = {
+    timer: PropTypes.object.isRequired,
+    deadline: PropTypes.bool.isRequired
+};
+
 
 export default TodoTimer;

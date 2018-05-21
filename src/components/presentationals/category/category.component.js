@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { TODO_LIST } from '../../../assets/json/routes';
 
-const Category = ({ active, count, children, filter, onClick }) => {
+const Category = ({ active, count, children, filter }) => {
 
     return (
         <div className={`category ${active ? 'category_active' : ''}`}>

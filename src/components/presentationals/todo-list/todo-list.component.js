@@ -4,7 +4,7 @@ import Todo from '../todo';
 import uniqid from 'uniqid';
 
 const TodoList = ({ todos, removeTodo }) => {
-    return (
+    return todos.length ? (
         <ul className='todo-list'>
             {todos.map(todo => (
                 <li key={uniqid()} className='todo-list__item'>
@@ -12,6 +12,10 @@ const TodoList = ({ todos, removeTodo }) => {
                 </li>
             ))}
         </ul>
+    ) : (
+        <div className="todo-list_empty">
+            add some todos
+        </div>
     );
 };
 
@@ -23,7 +27,8 @@ TodoList.propTypes = {
             deadline: PropTypes.bool.isRequired,
             status: PropTypes.string.isRequired
         }).isRequired
-    ).isRequired
+    ).isRequired,
+    removeTodo: PropTypes.func.isRequired
 };
 
 export default TodoList;

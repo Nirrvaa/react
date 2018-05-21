@@ -170,4 +170,8 @@ class Form extends Component {
     }
 }
 
+Form.propTypes = {
+    deadline: PropTypes.bool.isRequired
+};
+
 export default Form;
