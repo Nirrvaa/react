@@ -10,6 +10,7 @@
     padding: $basePadding;
     background-color: $headerBackground;
     border-bottom: $headerBorder;
+    z-index: 10;
     
     &__logo {
         background-color: $appBackground;
@@ -38,6 +39,9 @@
         font-size: 1.2em;
         text-transform: capitalize;
         cursor: pointer;
+        a {
+            color: $headerBorderColor;
+        }
         &:hover {
             background-color: rgb(231, 231, 231);
         }

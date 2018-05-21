@@ -24,7 +24,7 @@ const Todo = ({ removeTodo, status, title, timer, id, deadline }) => (
                 ) : null
             }
             <button className='todo__remove' onClick={removeTodo}>
-                ✘
+                ✖
             </button>
         </footer>
     </article>

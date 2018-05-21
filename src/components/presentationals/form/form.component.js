@@ -66,9 +66,9 @@ class Form extends Component {
     render() {
         return (
             <form
-                className='addTodo'
+                className='add-todo'
                 onSubmit={this.onSubmit}>
-                <section>
+                <section className='add-todo__title'>
                     <label htmlFor='title'>title:</label>
                     <input
                         required
@@ -80,17 +80,18 @@ class Form extends Component {
                         onChange={this.handleInputChange} />
                 </section>
 
-                <section>
-                    <Link to={this.linkURL()}>
-                        <button type='button'>
+                <section className='add-todo__deadline'>
+                    <button type='button' className='add-todo__toggle-deadline'>
+                        <Link to={this.linkURL()}>
                             {`${this.props.deadline ? 'disable' : 'enable'} deadline`}
-                        </button>
-                    </Link>
+                        </Link>
+                    </button>
                     {this.props.deadline ? (
-                        <div className="deadLine">
-                            <ul>
-                                <li>
+                        <div className='deadline'>
+                            <ul className='deadline-list deadline-list_date'>
+                                <li className='deadline-list__item'>
                                     <input
+                                        className='deadline-list__input'
                                         required
                                         name='date'
                                         type='number'
@@ -99,8 +100,9 @@ class Form extends Component {
                                         max='31'
                                         onChange={this.handleInputChange} />
                                 </li>
-                                <li>
+                                <li className='deadline-list__item'>
                                     <input
+                                        className='deadline-list__input'
                                         required
                                         name='month'
                                         type='number'
@@ -109,8 +111,9 @@ class Form extends Component {
                                         max='12'
                                         onChange={this.handleInputChange} />
                                 </li>
-                                <li>
+                                <li className='deadline-list__item'>
                                     <input
+                                        className='deadline-list__input'
                                         required
                                         name='year'
                                         type='number'
@@ -120,9 +123,10 @@ class Form extends Component {
                                         onChange={this.handleInputChange} />
                                 </li>
                             </ul>
-                            <ul>
-                                <li>
+                            <ul className='deadline-list deadline-list_time'>
+                                <li className='deadline-list__item'>
                                     <input
+                                        className='deadline-list__input'
                                         required
                                         name='hours'
                                         type='number'
@@ -131,8 +135,9 @@ class Form extends Component {
                                         max='23'
                                         onChange={this.handleInputChange} />
                                 </li>
-                                <li>
+                                <li className='deadline-list__item'>
                                     <input
+                                        className='deadline-list__input'
                                         required
                                         name='minutes'
                                         type='number'
@@ -141,8 +146,9 @@ class Form extends Component {
                                         max='59'
                                         onChange={this.handleInputChange} />
                                 </li>
-                                <li>
+                                <li className='deadline-list__item'>
                                     <input
+                                        className='deadline-list__input'
                                         required
                                         name='seconds'
                                         type='number'
@@ -156,7 +162,7 @@ class Form extends Component {
                     ) : null}
                 </section>
 
-                <button type='submit'>
+                <button type='submit' className='add-todo__submit'>
                     add Todo
                 </button>
             </form>

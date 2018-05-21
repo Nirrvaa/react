@@ -11,11 +11,12 @@ const Header = ({ match: { params } }) => {
             <h1 className='header__logo'>
                 <span className="header__caption">N</span>
             </h1>
-            <Link to={`/${baseURL}/${filterURL}`}>
-                <button className='header__button'>
+
+            <button className='header__button'>
+                <Link to={`/${baseURL}/${filterURL}`}>
                     {isTodoListOpened() ? 'add todo' : 'back to list'}
-                </button>
-            </Link>
+                </Link>
+            </button>
         </header>
     );
 };

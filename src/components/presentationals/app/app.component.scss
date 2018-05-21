@@ -9,6 +9,16 @@
     background-color: $appBackground;
 }
 .main {
+    background:
+radial-gradient(circle farthest-side at 0% 50%,#fff 23.5%,rgba(240,166,17,0) 0)21px 30px,
+radial-gradient(circle farthest-side at 0% 50%,$backgroundBorderColor 24%,rgba(240,166,17,0) 0)19px 30px,
+linear-gradient(#fff 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#fff 0)0 0,
+linear-gradient(150deg,#fff 24%,$backgroundBorderColor 0,$backgroundBorderColor 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$backgroundBorderColor 0,$backgroundBorderColor 76%,#fff 0)0 0,
+linear-gradient(30deg,#fff 24%,$backgroundBorderColor 0,$backgroundBorderColor 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$backgroundBorderColor 0,$backgroundBorderColor 76%,#fff 0)0 0,
+linear-gradient(90deg,$backgroundBorderColor 2%,#fff 0,#fff 98%,$backgroundBorderColor 0%)0 0 #fff;
+background-size:40px 60px;
+    display: flex;
+    flex-grow: 1;
     margin-bottom: auto;
     padding: $basePadding 0;
 }
